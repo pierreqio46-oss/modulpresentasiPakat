@@ -59,15 +59,17 @@ def read_pdf(file):
 def generate_slides(text):
     prompt = f"""
     Dari modul berikut: {text}
-    Buat presentasi:
-    Slide 1 Judul
-    Slide 2 Tujuan Pembelajaran
-    Slide 3 Materi
+    Buat presentasi dengan gambar icon yang sesuai dengan tema:
+    Slide 1 Judul (Berisi Judul modul dan Kelas/fase)
+    Slide 2 Tujuan Pembelajaran (seseai dengan modul)
+    Slide 3 Materi (berisi materi Kegiatan Awal)
+    Slide 4 Materi (berisi materi Kegiatan inti)
+    Slide 5 Materi (berisi materi Kegiatan Penutup)
     Slide 4 Aktivitas
     Slide 5 Refleksi
-    Slide 6 Asesmen
-    Slide 7 Kesimpulan
-    Maksimal 5 poin per slide
+    Slide 6 Asesmen (tampilkan soal asesmen, tambahkan slide jika dibutuhkan)
+    Slide 7 Kesimpulan (rangkuman materi susuai dengan KKTP)
+    Maksimal 10 poin per slide
     """
     response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
     return response.text
@@ -77,7 +79,7 @@ def generate_slides(text):
 # ================================== #
 def generate_quiz(text):
     prompt = f"""
-    Buat 10 soal pilihan ganda dari: {text}
+    Buat 20 soal pilihan ganda dari: {text}
     format:
     Soal:
     A.
