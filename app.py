@@ -65,10 +65,10 @@ def generate_slides(text):
     Slide 3 Materi (berisi materi Kegiatan Awal)
     Slide 4 Materi (berisi materi Kegiatan inti)
     Slide 5 Materi (berisi materi Kegiatan Penutup)
-    Slide 4 Aktivitas
-    Slide 5 Refleksi
-    Slide 6 Asesmen (tampilkan soal asesmen, tambahkan slide jika dibutuhkan)
-    Slide 7 Kesimpulan (rangkuman materi susuai dengan KKTP)
+    Slide 6 Aktivitas
+    Slide 7 Refleksi
+    Slide 8 Asesmen (tampilkan soal asesmen, tambahkan slide jika dibutuhkan)
+    Slide 9 Kesimpulan (rangkuman materi susuai dengan KKTP)
     Maksimal 10 poin per slide
     """
     response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
